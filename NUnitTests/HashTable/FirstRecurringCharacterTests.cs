@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Exercises;
 using NUnit.Framework;
-using Exercises;
 
 namespace NUnitTests.HashTable
 {
