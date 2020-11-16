@@ -98,5 +98,62 @@ namespace NUnitTests.LinkedList
 
             Assert.AreEqual(Expected, result);
         }
+
+        [TestCase(new int[] { 1 }, 2)]
+        public void TestingSinglyLinkedListRemoveShortList(int[] arr, int index)
+        {
+            var Expected = new List<int>() { 1 };
+
+            var singlyLinkedList = new SinglyLinkedList(arr[0]);
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                singlyLinkedList.Append(arr[i]);
+            }
+
+            singlyLinkedList.Remove(index);
+
+            var result = singlyLinkedList.PrintLinkedList();
+
+            Assert.AreEqual(Expected, result);
+        }
+
+        [TestCase(new int[] { 1, 10, 99, 5, 16 }, 0)]
+        public void TestingSinglyLinkedListRemoveHead(int[] arr, int index)
+        {
+            var Expected = new List<int>() { 10, 99, 5, 16 };
+
+            var singlyLinkedList = new SinglyLinkedList(arr[0]);
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                singlyLinkedList.Append(arr[i]);
+            }
+
+            singlyLinkedList.Remove(index);
+
+            var result = singlyLinkedList.PrintLinkedList();
+
+            Assert.AreEqual(Expected, result);
+        }
+
+        [TestCase(new int[] { 10, 5, 7, 9, 16 })]
+        public void TestingSinglyLinkedListReverse(int[] arr)
+        {
+            var Expected = new List<int>() { 16, 9, 7, 5, 10 };
+
+            var singlyLinkedList = new SinglyLinkedList(arr[0]);
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                singlyLinkedList.Append(arr[i]);
+            }
+
+            singlyLinkedList.Reverse();
+
+            var result = singlyLinkedList.PrintLinkedList();
+
+            Assert.AreEqual(Expected, result);
+        }
     }
 }
