@@ -43,7 +43,6 @@ namespace Exercises
             newNode.Next = this.head;
             this.head = newNode;
             this.length++;
-
         }
 
         public void Reverse()
