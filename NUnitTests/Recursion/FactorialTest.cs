@@ -25,5 +25,15 @@ namespace NUnitTests.Recursion
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestCase(5, 120)]
+        public void TestingFact(int number, int expected)
+        {
+            var factorial = new Factorial();
+
+            var result = factorial.Fact(number);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }

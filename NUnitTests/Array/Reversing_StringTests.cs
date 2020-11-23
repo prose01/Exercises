@@ -16,7 +16,7 @@ namespace NUnitTests.Array
         {
             var reversing_String = new Reversing_String();
 
-            return reversing_String.reverseString(str);
+            return reversing_String.ReverseString(str);
         }
 
         [TestCase("I am Peter", ExpectedResult = "reteP ma I")]
@@ -25,7 +25,7 @@ namespace NUnitTests.Array
         {
             var reversing_String = new Reversing_String();
 
-            return reversing_String.reverseStringFaster(str);
+            return reversing_String.ReverseStringFaster(str);
         }
     }
 }
