@@ -1,35 +1,54 @@
 ﻿using Exercises;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace NUnitTests.Graph
 {
     public class GraphTests
     {
-        [TestCase(new int[] { 9, 4, 20, 1, 6, 15, 170 })]
-        public void TestingGraphInsert(int[] arr)
+        [Test]
+        public void TestingGraphAddVertex()
         {
+            var graph = new GraphExercise();
 
-            //var graph = new Graph();
+            graph.AddVertex(new GraphNode(0));
+            graph.AddVertex(new GraphNode(1));
+            graph.AddVertex(new GraphNode(2));
+            graph.AddVertex(new GraphNode(3));
+            graph.AddVertex(new GraphNode(4));
+            graph.AddVertex(new GraphNode(5));
+            graph.AddVertex(new GraphNode(6));
 
-            //graph.addVertex(0);
-            //graph.addVertex(1);
-            //graph.addVertex(2);
-            //graph.addVertex(3);
-            //graph.addVertex(4);
-            //graph.addVertex(5);
-            //graph.addVertex(6);
-            //graph.addEdge(3, 1);
-            //graph.addEdge(3, 4);
-            //graph.addEdge(4, 2);
-            //graph.addEdge(4, 5);
-            //graph.addEdge(1, 2);
-            //graph.addEdge(1, 0);
-            //graph.addEdge(0, 2);
-            //graph.addEdge(6, 5);
-            //graph.showConnections();
+            graph.ShowConnections();
 
-            //Assert.AreEqual(Expected, null);
+            var result = graph.GetNumberOfNodes();
+
+            Assert.AreEqual(7, result);
+        }
+
+        // Run in Debug mode and look in Output -> Debug to see result.
+        [Test]
+        public void TestingGraphAddEdges()
+        {
+            var graph = new GraphExercise();
+
+            graph.AddVertex(new GraphNode(0));
+            graph.AddVertex(new GraphNode(1));
+            graph.AddVertex(new GraphNode(2));
+            graph.AddVertex(new GraphNode(3));
+            graph.AddVertex(new GraphNode(4));
+            graph.AddVertex(new GraphNode(5));
+            graph.AddVertex(new GraphNode(6));
+
+            graph.AddEdge(new GraphNode(3), new GraphNode(1));
+            graph.AddEdge(new GraphNode(3), new GraphNode(4));
+            graph.AddEdge(new GraphNode(4), new GraphNode(2));
+            graph.AddEdge(new GraphNode(4), new GraphNode(5));
+            graph.AddEdge(new GraphNode(1), new GraphNode(2));
+            graph.AddEdge(new GraphNode(1), new GraphNode(0));
+            graph.AddEdge(new GraphNode(0), new GraphNode(2));
+            graph.AddEdge(new GraphNode(6), new GraphNode(5));
+
+            graph.ShowConnections();
         }
     }
 }
