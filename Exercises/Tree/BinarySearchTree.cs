@@ -2,7 +2,7 @@
 {
     public class BinarySearchTree
     {
-        private TreeNode root;
+        public TreeNode root;
 
         public BinarySearchTree()
         {
