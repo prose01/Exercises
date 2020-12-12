@@ -1,6 +1,5 @@
 ﻿using Exercises;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace NUnitTests.Tree
 {
@@ -14,8 +13,6 @@ namespace NUnitTests.Tree
         [TestCase(new int[] { 9, 4, 20, 1, 6, 15, 170 })]
         public void TestingBinarySearchTreeInsert(int[] arr)
         {
-            //var Expected = new List<int>() { 9, 4, 20, 1, 6, 15, 170 };
-
             var binarySearchTree = new BinarySearchTree();
 
             for (int i = 0; i < arr.Length; i++)
@@ -32,8 +29,6 @@ namespace NUnitTests.Tree
         [TestCase(new int[] { 9, 4, 20, 1, 6, 15, 170 }, 99, null)]
         public void TestingBinarySearchTreeLookup(int[] arr, int lookup, object expected)
         {
-            var Expected = new List<int>() { 10, 5, 16 };
-
             var binarySearchTree = new BinarySearchTree();
 
             for (int i = 0; i < arr.Length; i++)
