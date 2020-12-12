@@ -17,7 +17,7 @@ namespace Exercises
         // 2 parameters - arrays - no size limit
         // return true or false
 
-        public bool containsCommonItem(char[] arr1, char[] arr2)
+        public bool containsCommonItem(char[] arr1, char[] arr2)    // 0(n^2)
         {
             for (var i = 0; i < arr1.Length; i++)
             {
@@ -32,7 +32,7 @@ namespace Exercises
             return false;
         }
 
-        public bool containsCommonItem2(char[] arr1, char[] arr2)
+        public bool containsCommonItem2(char[] arr1, char[] arr2)       // 0(n)
         {
             // loop through first array and create object where properties === items in the array
             // can we assume always 2 params?
