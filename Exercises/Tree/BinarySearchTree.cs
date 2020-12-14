@@ -9,7 +9,7 @@
             this.root = null;
         }
 
-        public void Insert(int value)
+        public void Insert(int value)   // 0(log n) but can be 0(n) if everything is to one side, fx. if every new value is bigger than the previous [1, 2, 3, 4...].
         {
             var newTreeNode = new TreeNode(value);
 
@@ -23,6 +23,11 @@
 
                 while (true)
                 {
+                    if(value == currentNode.Value)  // Short breack to prevent infinite loop if we try to insert same value twice.
+                    {
+                        return;
+                    }
+
                     if(value < currentNode.Value)
                     {
                         //Left
@@ -49,7 +54,7 @@
             }
         }
 
-        public TreeNode Lookup(int value)
+        public TreeNode Lookup(int value)   // 0(log n) but can be 0(n) if everything is to one side, fx. if every new value is bigger than the previous [1, 2, 3, 4...].
         {
             if (root == null)
             {
