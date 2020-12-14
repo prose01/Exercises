@@ -48,5 +48,23 @@ namespace NUnitTests.Traversal
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestCase(new int[] { 9, 4, 20, 1, 6, 15, 170 }, 1, true)]
+        [TestCase(new int[] { 9, 4, 20, 1, 6, 15, 170 }, 15, true)]
+        [TestCase(new int[] { 9, 4, 20, 1, 6, 15, 170 }, 77, false)]
+        public void TestingLookup(int[] arr, int lookup, bool expected)
+        {
+            var binarySearchTree = new BinarySearchTree();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                binarySearchTree.Insert(arr[i]);
+            }
+
+            var sut = new BreadthFirstSearch();
+            var result = sut.Lookup(binarySearchTree.root, lookup);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }

@@ -55,5 +55,33 @@ namespace Exercises
 
             return BreathFirstSearchRecurcive(queue, list);
         }
+
+
+        //Iterative
+        public bool Lookup(TreeNode currentNode, int value)   // 0(log n) but can be 0(n) if everything is to one side, fx. if every new value is bigger than the previous [1, 2, 3, 4...].
+        {
+            if (currentNode == null || currentNode.Value < 0) // Assuming values are always positive integers.
+            {
+                return false;
+            }
+
+            while (currentNode != null)
+            {
+                if (value == currentNode.Value)
+                {
+                    return true;
+                }
+                else if (value < currentNode.Value)
+                {
+                    currentNode = currentNode.Left;
+                }
+                else
+                {
+                    currentNode = currentNode.Right;
+                }
+            }
+
+            return false;
+        }
     }
 }
