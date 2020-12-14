@@ -49,7 +49,7 @@ namespace Exercises
             int leftWindow = 0;
             int rightWindow = 0;
 
-            while (j < s.Length)
+            while (rightWindow < s.Length)
             {
                 if (!index.ContainsKey(s[rightWindow]))
                 {
