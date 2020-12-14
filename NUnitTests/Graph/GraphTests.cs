@@ -50,5 +50,57 @@ namespace NUnitTests.Graph
 
             graph.ShowConnections();
         }
+
+        [Test]
+        public void TestingGraphAddEdgesSimpler()
+        {
+            var graph = new GraphExercise();
+
+            graph.AddVertex(new GraphNode(0));
+            graph.AddVertex(new GraphNode(1));
+            graph.AddVertex(new GraphNode(2));
+
+            graph.AddEdge(new GraphNode(0), new GraphNode(1));
+            graph.AddEdge(new GraphNode(1), new GraphNode(2));
+            graph.AddEdge(new GraphNode(2), new GraphNode(0));
+
+            graph.ShowConnections();
+        }
+
+        [Test]
+        public void TestingGraphRemoveEdge()
+        {
+            var graph = new GraphExercise();
+
+            graph.AddVertex(new GraphNode(0));
+            graph.AddVertex(new GraphNode(1));
+            graph.AddVertex(new GraphNode(2));
+
+            graph.AddEdge(new GraphNode(0), new GraphNode(1));
+            graph.AddEdge(new GraphNode(1), new GraphNode(2));
+            graph.AddEdge(new GraphNode(2), new GraphNode(0));
+
+            graph.RemoveEdge(new GraphNode(1), new GraphNode(2));
+
+            graph.ShowConnections();
+        }
+
+        //[Test]
+        //public void TestingGraphRemoveVertex()
+        //{
+        //    var graph = new GraphExercise();
+
+        //    graph.AddVertex(new GraphNode(0));
+        //    graph.AddVertex(new GraphNode(1));
+        //    graph.AddVertex(new GraphNode(2));
+
+        //    graph.AddEdge(new GraphNode(0), new GraphNode(1));
+        //    graph.AddEdge(new GraphNode(1), new GraphNode(2));
+        //    graph.AddEdge(new GraphNode(2), new GraphNode(0));
+
+        //    graph.RemoveVertex(new GraphNode(1));
+
+        //    graph.ShowConnections();
+        //}
     }
 }
