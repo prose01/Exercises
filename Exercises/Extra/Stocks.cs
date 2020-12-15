@@ -47,13 +47,13 @@
             int highest = 0;
             int lowest = int.MaxValue;
 
-            for (var i = 1; i < prices.Length; i++)
+            for (var i = 0; i < prices.Length; i++)
             {
                 if (prices[i] < lowest)
                 {
                     lowest = prices[i];
                 }
-                else if (prices[i] - lowest > highest)
+                else if (highest < prices[i] - lowest)
                 {
                     highest = prices[i] - lowest;
                 }
